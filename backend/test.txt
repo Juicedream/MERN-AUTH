@@ -1,0 +1,26 @@
+const { MailtrapClient } = require("mailtrap");
+
+const TOKEN = "80999d49ceee428c57451462c09ae77d";
+const ENDPOINT = "https://send.api.mailtrap.io/";
+
+const client = new MailtrapClient({ endpoint: ENDPOINT, token: TOKEN });
+
+const sender = {
+  email: "mailtrap@demomailtrap.com",
+  name: "Mailtrap Test",
+};
+const recipients = [
+  {
+    email: "judexfrayo@gmail.com",
+  }
+];
+
+client
+  .send({
+    from: sender,
+    to: recipients,
+    subject: "You are awesome!",
+    text: "Congrats for sending test email with Mailtrap!",
+    category: "Integration Test",
+  })
+  .then(console.log, console.error);

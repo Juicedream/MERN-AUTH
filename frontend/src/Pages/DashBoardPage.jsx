@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useAuthStore } from "../store/authStore";
-import { formatDate } from "../utils/Date";
+import { formatDate } from "../utils/date";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
